@@ -1,0 +1,82 @@
+[
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "iphone 14",
+    "price": 849,
+    "company": "apple"
+  },
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "iphone 13",
+    "price": 699,
+    "company": "apple"
+  },
+  {
+    "featured": false,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "watch",
+    "price": 299,
+    "company": "apple"
+  },
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "Samsung s22+",
+    "price": 899,
+    "company": "samsung"
+  },
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "samsung notebook",
+    "price": 699,
+    "company": "samsung"
+  },
+  {
+    "featured": false,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "samsung watch",
+    "price": 299,
+    "company": "samsung"
+  },
+  {
+    "featured": false,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "dell inspiron15",
+    "price": 599,
+    "company": "dell"
+  },
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "dell vastro14",
+    "price": 499,
+    "company": "dell"
+  },
+  {
+    "featured": false,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "mi notebook",
+    "price": 499,
+    "company": "mi"
+  },
+  {
+    "featured": true,
+    "rating": 4.5,
+    "createdAt": "2023-06-10T04:55:58.254Z",
+    "name": "note 10 pro",
+    "price": 199,
+    "company": "mi"
+  }
+]

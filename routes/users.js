@@ -205,11 +205,11 @@ router.delete("/:id", (req, res) => {
       if (user) {
         return res
           .status(200)
-          .json({ success: true, message: "User deleted successfully" });
+          .json({ success: true, message: "User deleted successfully." });
       } else {
         return res
           .status(404)
-          .json({ success: false, message: "User not found!" });
+          .json({ success: false, message: "User not found." });
       }
     })
     .catch((err) => {

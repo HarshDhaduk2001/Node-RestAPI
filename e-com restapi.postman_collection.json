@@ -1,0 +1,936 @@
+{
+	"info": {
+		"_postman_id": "5a901c10-72f2-4262-a9dc-ca7f78eec328",
+		"name": "e-com restapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27078873"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "apple",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description",
+									"type": "text"
+								},
+								{
+									"key": "richDescription",
+									"value": "richDescription",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/harsh/OneDrive/Pictures/Saved Pictures/2.jpg"
+								},
+								{
+									"key": "brand",
+									"value": "apple",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1099",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "64e9945247f14283aa4d956e",
+									"type": "text"
+								},
+								{
+									"key": "countInStock",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "numReviews",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "isFeatured",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/products",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"iphone13\",\r\n    \"description\": \"this is iphone\",\r\n    \"richDescription\": \"reach desc\",\r\n    \"image\": \"img\",\r\n    \"brand\": \"iphone\",\r\n    \"price\": 100,\r\n    \"category\": \"64e982e2c0f32a482e9d3f55\",\r\n    \"countInStock\": 20,\r\n    \"rating\": 4,\r\n    \"numReviews\": 10,\r\n    \"isFeatured\": false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/products/64e9832c003b01fe8a5a26f0",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"64e9832c003b01fe8a5a26f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products/64e99944c21b2c892481b114",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"64e99944c21b2c892481b114"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products/64e998d6c21b2c892481b105",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"64e998d6c21b2c892481b105"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterwithcategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products?categories=64e989f82dbd047ea26d402e",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "categories",
+									"value": "64e989f82dbd047ea26d402e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "countProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products/get/count",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFeaturedProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/products/get/featured/1",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"get",
+								"featured",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMultipleImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "hp pavelion 15",
+									"type": "text"
+								},
+								{
+									"key": "desctiption",
+									"value": "description",
+									"type": "text"
+								},
+								{
+									"key": "richDescription",
+									"value": "richDescription",
+									"description": "\n",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/C:/Users/harsh/OneDrive/Pictures/Saved Pictures/1.png",
+										"/C:/Users/harsh/OneDrive/Pictures/Saved Pictures/2.jpg"
+									]
+								},
+								{
+									"key": "brand",
+									"value": "hp",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "699",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "64e989f82dbd047ea26d402e",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "numReviews",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "isFeatured",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api}}/products/gallery-images/64ead6c0ad9a1221cb1bab62",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"products",
+								"gallery-images",
+								"64ead6c0ad9a1221cb1bab62"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "getAllCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/categories",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone12\",\r\n    \"icon\":\"apple\",\r\n    \"color\":\"#fff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/categories",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"iphone\",\r\n    \"icon\":\"apple\",\r\n    \"color\":\"#fff\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/categories/64e98ae57fbfc7b0cf9921ef",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categories",
+								"64e98ae57fbfc7b0cf9921ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/categories/64e994b747f14283aa4d9572",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categories",
+								"64e994b747f14283aa4d9572"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/categories/64e989f82dbd047ea26d402e",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"categories",
+								"64e989f82dbd047ea26d402e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"admin@yopmail.com\",\r\n  \"password\": \"Admin@123\",\r\n  \"phone\": \"1234567890\",\r\n  \"isAdmin\": true,\r\n  \"street\": \"123 Main St\",\r\n  \"apartment\": \"Apt 456\",\r\n  \"zip\": \"12345\",\r\n  \"city\": \"Cityville\",\r\n  \"country\": \"Countryland\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/users",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserList",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users/64e9bffaf508db0fd516a634",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"64e9bffaf508db0fd516a634"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users/64e9bffaf508db0fd516a634",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"64e9bffaf508db0fd516a634"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john@example.com\",\r\n    \"passwordHash\": \"$2a$10$0VaWdKrBoEHR8GMLYfDy2edtxyQR3aiK3vDqJQ/pZ7w.tdC459EJi\",\r\n    \"phone\": \"123-456-7890\",\r\n    \"isAdmin\": false,\r\n    \"street\": \"123 Main St\",\r\n    \"apartment\": \"Apt 456\",\r\n    \"zip\": \"12345\",\r\n    \"city\": \"Cityville\",\r\n    \"country\": \"Countryland\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/users/64e9bfd9f508db0fd516a632",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"64e9bfd9f508db0fd516a632"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"superadmin\",\r\n  \"email\": \"superadmin@yopmail.com\",\r\n  \"password\": \"SuperAdmin@123\",\r\n  \"phone\": \"1234567890\",\r\n  \"isAdmin\": true,\r\n  \"street\": \"123 Main St\",\r\n  \"apartment\": \"Apt 456\",\r\n  \"zip\": \"12345\",\r\n  \"city\": \"Cityville\",\r\n  \"country\": \"Countryland\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/users/register",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@yopmail.com\",\r\n    \"password\": \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/users/login",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userCount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/users/get/count",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"users",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\" : [\r\n        {\r\n            \"quantity\": 1,\r\n            \"product\" : \"64ead6c0ad9a1221cb1bab62\"\r\n        },\r\n        {\r\n            \"quantity\": 2,\r\n            \"product\" : \"64eada4c5b382579f1540ec4\"\r\n        },\r\n        {\r\n            \"quantity\": 5,\r\n            \"product\" : \"64eada4c5b382579f1540ec4\"\r\n        }\r\n    ],\r\n    \"shippingAddress1\" : \"Flowers Street , 45\",\r\n    \"shippingAddress2\" : \"1-B\",\r\n    \"city\": \"Prague\",\r\n    \"zip\": \"00000\",\r\n    \"country\": \"Czech Republic\",\r\n    \"phone\": \"+420702241333\",\r\n    \"user\": \"64e9c44f6357cf0d1d591f66\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/orders",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/64eadaa05b382579f1540edf",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"64eadaa05b382579f1540edf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrderStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api}}/orders/64eadaa05b382579f1540edf",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"64eadaa05b382579f1540edf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/64eacf2dd2a4025f088a3fec",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"64eacf2dd2a4025f088a3fec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTotalSales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/get/totalsales",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"get",
+								"totalsales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderCount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/get/count",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"get",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderAccordingUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api}}/orders/get/userorders/64e9c44f6357cf0d1d591f66",
+							"host": [
+								"{{api}}"
+							],
+							"path": [
+								"orders",
+								"get",
+								"userorders",
+								"64e9c44f6357cf0d1d591f66"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

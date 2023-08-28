@@ -1,7 +1,8 @@
 const { Category } = require("../models/category");
+const { Product } = require("../models/product");
+
 const express = require("express");
 const router = express();
-const mongoose = require("mongoose");
 
 router.get(`/`, async (req, res) => {
   try {
@@ -103,26 +104,64 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
-  Category.findByIdAndRemove(req.params.id)
-    .then((category) => {
-      if (category) {
-        return res
-          .status(200)
-          .status(200)
-          .json({ success: true, message: "Category deleted successfully." });
-      } else {
-        return res
-          .status(404)
-          .json({ success: false, message: "Category not found!" });
-      }
-    })
-    .catch((err) => {
-      return res.status(500).json({
-        success: false,
-        message: "An error occurred while deleting the category.",
-      });
+router.delete("/:id", async (req, res) => {
+  const categoryId = await req.params.id;
+
+  try {
+    const category = await Category.findById(categoryId);
+    if (!category) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Category not found" });
+    }
+
+    const productsWithCategory = await Product.findOne({
+      category: categoryId,
     });
+    if (productsWithCategory) {
+      return res
+        .status(400)
+        .json({ message: "Category is assigned to products. Cannot delete." });
+    }
+
+    await Category.findByIdAndDelete(categoryId);
+    res
+      .status(200)
+      .json({ success: true, message: "Category deleted successfully." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while deleting the category.",
+    });
+  }
+
+  // const productsWithCategory = await Product.findOne({ category: categoryId });
+  // if (productsWithCategory) {
+  //   return res
+  //     .status(400)
+  //     .json({ message: "Category is assigned to products cannot delete." });
+  // } else {
+  //   Category.findByIdAndRemove(categoryId)
+  //     .then((category) => {
+  //       if (category) {
+  //         return res
+  //           .status(200)
+  //           .status(200)
+  //           .json({ success: true, message: "Category deleted successfully." });
+  //       } else {
+  //         return res
+  //           .status(404)
+  //           .json({ success: false, message: "Category not found!" });
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       return res.status(500).json({
+  //         success: false,
+  //         message: "An error occurred while deleting the category.",
+  //       });
+  //     });
+  // }
 });
 
 module.exports = router;

@@ -1,0 +1,4 @@
+API_URL="/api/v1"
+secret="this is secret"
+PORT=8000
+MONGODB_URL="add mongodb url"

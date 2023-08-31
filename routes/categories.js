@@ -135,33 +135,6 @@ router.delete("/:id", async (req, res) => {
       message: "An error occurred while deleting the category.",
     });
   }
-
-  // const productsWithCategory = await Product.findOne({ category: categoryId });
-  // if (productsWithCategory) {
-  //   return res
-  //     .status(400)
-  //     .json({ message: "Category is assigned to products cannot delete." });
-  // } else {
-  //   Category.findByIdAndRemove(categoryId)
-  //     .then((category) => {
-  //       if (category) {
-  //         return res
-  //           .status(200)
-  //           .status(200)
-  //           .json({ success: true, message: "Category deleted successfully." });
-  //       } else {
-  //         return res
-  //           .status(404)
-  //           .json({ success: false, message: "Category not found!" });
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       return res.status(500).json({
-  //         success: false,
-  //         message: "An error occurred while deleting the category.",
-  //       });
-  //     });
-  // }
 });
 
 module.exports = router;
